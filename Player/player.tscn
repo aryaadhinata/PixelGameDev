@@ -9,8 +9,11 @@
 [ext_resource type="Script" uid="uid://cl6j4qmj6tn75" path="res://Player/Script/state_walk.gd" id="5_k53q1"]
 [ext_resource type="Script" uid="uid://b1obw7oy1un64" path="res://Player/Script/state_attack.gd" id="6_fhl08"]
 [ext_resource type="AudioStream" uid="uid://bw5lguh3ljyf2" path="res://Player/Audio/SwordSwoosh.wav" id="8_od3ui"]
+[ext_resource type="Script" uid="uid://bkqdku5tsu6ca" path="res://Player/Script/player_interaction_host.gd" id="10_apopc"]
+[ext_resource type="PackedScene" uid="uid://dsvet0nv3ijan" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="10_x3vf3"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7oj32"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_x3vf3"]
+radius = 12.0
 
 [sub_resource type="Animation" id="Animation_5htga"]
 length = 0.001
@@ -423,6 +426,9 @@ _data = {
 &"walk_up": SubResource("Animation_vtle1")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ra5lk"]
+radius = 20.0
+
 [node name="player" type="CharacterBody2D" unique_id=2079814588]
 collision_mask = 16
 motion_mode = 1
@@ -430,11 +436,11 @@ wall_min_slide_angle = 0.17453292
 script = ExtResource("1_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1448331778]
-position = Vector2(2, 11)
-shape = SubResource("CircleShape2D_7oj32")
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_x3vf3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1588654740]
-position = Vector2(1, -9)
+position = Vector2(0, -16)
 texture = ExtResource("2_k53q1")
 hframes = 16
 vframes = 3
@@ -471,8 +477,22 @@ script = ExtResource("6_fhl08")
 attack_sound = ExtResource("8_od3ui")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1843262475]
+position = Vector2(0, -16)
 
 [node name="Audio" type="Node" parent="." unique_id=575465161]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio" unique_id=675861260]
+position = Vector2(0, -16)
 max_polyphony = 4
+
+[node name="Interaction" type="Node2D" parent="." unique_id=1151507668]
+script = ExtResource("10_apopc")
+
+[node name="HurtBox" parent="Interaction" unique_id=207109081 instance=ExtResource("10_x3vf3")]
+collision_mask = 256
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/HurtBox" unique_id=223131380]
+position = Vector2(0, 21)
+shape = SubResource("CircleShape2D_ra5lk")
+debug_color = Color(0.99999994, 0.0010205645, 0.09958256, 0.41960785)

@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bw5lguh3ljyf2" path="res://Player/Audio/SwordSwoosh.wav" id="8_od3ui"]
 [ext_resource type="Script" uid="uid://bkqdku5tsu6ca" path="res://Player/Script/player_interaction_host.gd" id="10_apopc"]
 [ext_resource type="PackedScene" uid="uid://dsvet0nv3ijan" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="10_x3vf3"]
+[ext_resource type="Script" uid="uid://bo0ehli3t2x5a" path="res://Player/Script/PlayerCamera.gd" id="11_5htga"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3vf3"]
 radius = 12.0
@@ -536,6 +537,7 @@ attack_sound = ExtResource("8_od3ui")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1843262475]
 position = Vector2(0, -16)
+script = ExtResource("11_5htga")
 
 [node name="Audio" type="Node" parent="." unique_id=575465161]
 

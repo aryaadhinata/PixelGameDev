@@ -11,7 +11,7 @@ var attacking : bool = false
 
 @onready var idle: State_Idle = $"../idle"
 @onready var walk: State_Walk = $"../walk"
-@onready var hurt_box: HurtBox = $"../../Interaction/HurtBox"
+@onready var hurt_box: HurtBox = %AttackHurtBox
 
 
 # what happen when player enter this state?

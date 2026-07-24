@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://cioubia8ynpui" path="res://props/plant/plant.gd" id="1_hd0yf"]
 [ext_resource type="PackedScene" uid="uid://rft07yw37pom" path="res://GeneralNodes/HitBox/hit_box.tscn" id="2_4ohwc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd0yf"]
+size = Vector2(32, 26)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra5lk"]
 size = Vector2(24, 16)
 
@@ -20,7 +23,9 @@ position = Vector2(0, 9)
 collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=586322218]
-shape = SubResource("RectangleShape2D_ra5lk")
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_hd0yf")
+debug_color = Color(0.5906618, 0.5479349, 1.92523e-07, 0.41960785)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1415409170]
 position = Vector2(0, 9)

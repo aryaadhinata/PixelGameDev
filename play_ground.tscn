@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bbtdwkism73ky" path="res://Tile Maps/grass-01.tscn" id="2_7oj32"]
 [ext_resource type="Texture2D" uid="uid://cbbyutjo557l1" path="res://Tile Maps/Sprites/Grass-01.png" id="3_6g3ri"]
 [ext_resource type="PackedScene" uid="uid://cpxwqq5y70pfi" path="res://props/plant/plant.tscn" id="4_hm0dn"]
+[ext_resource type="PackedScene" uid="uid://bhfm5aa5gt3i7" path="res://Enemies/Slime/sime.tscn" id="5_6hfcc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hm0dn"]
 texture = ExtResource("3_6g3ri")
@@ -506,3 +507,6 @@ position = Vector2(139, 322)
 
 [node name="Plant3" parent="." unique_id=2018644520 instance=ExtResource("4_hm0dn")]
 position = Vector2(348, 61)
+
+[node name="Sime" parent="." unique_id=1889120745 instance=ExtResource("5_6hfcc")]
+position = Vector2(229, 313)

@@ -20,7 +20,6 @@ vframes = 3
 
 [node name="HitBox" parent="." unique_id=1845444148 instance=ExtResource("2_4ohwc")]
 position = Vector2(0, 9)
-collision_mask = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=586322218]
 position = Vector2(0, -5)

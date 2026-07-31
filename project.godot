@@ -19,6 +19,7 @@ config/icon="uid://dhbn0n8fcs7ji"
 
 LevelMeneger="*uid://u4dxfb5jbhew"
 PlayerMeneger="*uid://bac68y8aivw6a"
+PlayerHud="*uid://kaqm7kcngwrd"
 
 [display]
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rproject"
-run/main_scene="res://play_ground.tscn"
+run/main_scene="uid://th7gqre5sxyh"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="uid://dhbn0n8fcs7ji"
 
@@ -20,6 +20,7 @@ config/icon="uid://dhbn0n8fcs7ji"
 LevelMeneger="*uid://u4dxfb5jbhew"
 PlayerHud="*uid://kaqm7kcngwrd"
 PlayerMeneger="*uid://bac68y8aivw6a"
+SceneTransition="*uid://wdfticpvp5y1"
 
 [display]
 

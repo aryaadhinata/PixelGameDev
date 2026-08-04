@@ -20,7 +20,7 @@ enum SIDE {LEFT, RIGHT, TOP, BOTTOM}
 
 @export var snap_to_grid : bool = false :
 	set(_v):
-		snap_to_grid
+		snap_to_grid = true
 
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 

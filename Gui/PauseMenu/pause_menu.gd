@@ -7,6 +7,9 @@ var is_paused : bool = false
 
 func _ready() -> void:
 	hide_paused_menu()
+	button_save.pressed.connect( _on_save_pressed)
+	button_load.pressed.connect( _on_load_pressed)
+	 
 	pass
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -24,6 +27,7 @@ func show_paused_menu() -> void :
 	get_tree().paused = true
 	visible = true
 	is_paused = true
+	button_save.grab_focus()
 	
 	pass
 
@@ -32,5 +36,20 @@ func hide_paused_menu() -> void :
 	visible = false
 	is_paused = false
 	
+	pass
+
+func _on_save_pressed() -> void:
+	if is_paused == false:
+		return
+	SaveMeneger.save_game()
+	hide_paused_menu()
+	pass
+
+func _on_load_pressed() -> void:
+	if is_paused == false:
+		return
+	SaveMeneger.load_game()
+	await LevelMeneger.level_load_started
+	hide_paused_menu()
 	
 	pass

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://xnieyxg5aavh"]
+
+[ext_resource type="Script" uid="uid://c6mj41mbonjma" path="res://Items/ItemsEffects/item_effects.gd" id="1_3h2xm"]
+[ext_resource type="Script" uid="uid://c3a3oynvctoij" path="res://Items/Scripts/item_data.gd" id="2_06x63"]
+[ext_resource type="AudioStream" uid="uid://c2y6aum0hory7" path="res://Items/ItemsEffects/hp-up.wav" id="2_jyddo"]
+[ext_resource type="Script" uid="uid://bybcftseorumj" path="res://Items/ItemsEffects/item_effects_heal.gd" id="3_8fxyx"]
+[ext_resource type="Texture2D" uid="uid://ch55gju8m18qr" path="res://Items/Sprites/items.png" id="5_4bpjo"]
+
+[sub_resource type="Resource" id="Resource_yqryo"]
+script = ExtResource("3_8fxyx")
+audio = ExtResource("2_jyddo")
+metadata/_custom_type_script = "uid://bybcftseorumj"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra5lk"]
+atlas = ExtResource("5_4bpjo")
+region = Rect2(192, 0, 32, 0)
+
+[resource]
+script = ExtResource("2_06x63")
+name = "Apple"
+description = "A red big berry"
+texture = SubResource("AtlasTexture_ra5lk")
+effect = Array[ExtResource("1_3h2xm")]([SubResource("Resource_yqryo")])
+metadata/_custom_type_script = "uid://c3a3oynvctoij"

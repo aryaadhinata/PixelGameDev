@@ -2,12 +2,15 @@ class_name InventoryUI extends Control
 
 const INVENTORY_SLOT = preload("res://Gui/PauseMenu/Inventory/inventory_slot.tscn")
 
+var focus_index : int = 0
 @export var data : InventoryData
 
 func _ready() -> void:
 	PauseMenu.shown.connect(update_inventory)
 	PauseMenu.hiden.connect(clear_inventory)
 	clear_inventory()
+	
+	data.changed.connect(on_inventory_changed)
 	pass
 
 func clear_inventory() -> void :
@@ -15,11 +18,26 @@ func clear_inventory() -> void :
 		c.queue_free()
 	pass
 
-func update_inventory() -> void :
+func update_inventory(i : int = 0) -> void :
 	for s in data.slots:
 		var new_slots = INVENTORY_SLOT.instantiate()
 		add_child(new_slots)
 		new_slots.slot_data = s
+		new_slots.focus_entered.connect(item_focused)
 	
-	get_child(0).grab_focus()
+	await get_tree().process_frame
+	get_child(i).grab_focus()
+	pass
+
+func item_focused() -> void:
+	for i in get_child_count():
+		if get_child(i).has_focus():
+			focus_index = i
+			return
+	pass
+
+func on_inventory_changed() -> void:
+	var i = focus_index
+	clear_inventory()
+	update_inventory(i)
 	pass

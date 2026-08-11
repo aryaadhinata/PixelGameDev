@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bph1g0bws1xw6"]
 
+[ext_resource type="Script" uid="uid://c6mj41mbonjma" path="res://Items/ItemsEffects/item_effects.gd" id="1_2fq0s"]
 [ext_resource type="Script" uid="uid://c3a3oynvctoij" path="res://Items/Scripts/item_data.gd" id="1_xhx7w"]
 [ext_resource type="Texture2D" uid="uid://ch55gju8m18qr" path="res://Items/Sprites/items.png" id="2_yvy2p"]
 

@@ -2,18 +2,71 @@
 
 [ext_resource type="Script" uid="uid://bm63plx2554em" path="res://Items/ItemPickUp/item_pick_up.gd" id="1_78cqe"]
 [ext_resource type="AudioStream" uid="uid://v56i6ff2dp2o" path="res://Items/ItemPickUp/item_pickup.wav" id="2_dgbpw"]
+[ext_resource type="Texture2D" uid="uid://b1kd18jaaxig" path="res://Player/Sprite/Shadow.png" id="2_l8hqu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ra5lk"]
 
-[node name="ItemPickUp" type="Node2D" unique_id=1205634926]
+[sub_resource type="Animation" id="Animation_80sx2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rlgv7"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.53333336, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(-2, -2, -2, -2, -2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0), Vector2(0, -3), Vector2(0, 0), Vector2(0, -1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g37mf"]
+_data = {
+&"RESET": SubResource("Animation_80sx2"),
+&"default": SubResource("Animation_rlgv7")
+}
+
+[node name="ItemPickUp" type="CharacterBody2D" unique_id=1160784075]
+collision_layer = 0
+collision_mask = 16
+motion_mode = 1
 script = ExtResource("1_78cqe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1140299625]
+shape = SubResource("CircleShape2D_ra5lk")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1926696437]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1328705778]
 shape = SubResource("CircleShape2D_ra5lk")
 
+[node name="Shadow_Sprite2D" type="Sprite2D" parent="." unique_id=1842241477]
+modulate = Color(0, 0, 0, 0.39607844)
+position = Vector2(0, 7)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_l8hqu")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1502984065]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1804092202]
 stream = ExtResource("2_dgbpw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=526445532]
+libraries/ = SubResource("AnimationLibrary_g37mf")
+autoplay = &"default"

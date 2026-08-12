@@ -12,7 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://rft07yw37pom" path="res://GeneralNodes/HitBox/hit_box.tscn" id="10_17q00"]
 [ext_resource type="Script" uid="uid://db4w1e5ivaqw4" path="res://Enemies/Script/state/enemy_state_destroy.gd" id="10_it4bq"]
 [ext_resource type="PackedScene" uid="uid://dsvet0nv3ijan" path="res://GeneralNodes/HurtBox/hurt_box.tscn" id="11_7mghe"]
+[ext_resource type="Script" uid="uid://buh6505h8x1xc" path="res://Enemies/Script/drop_data.gd" id="11_uqwu5"]
+[ext_resource type="Resource" uid="uid://bph1g0bws1xw6" path="res://Items/Gem.tres" id="12_abenm"]
 [ext_resource type="Texture2D" uid="uid://bvy5rrftb0nuo" path="res://Enemies/Slime/DestroySmoke.png" id="12_uqwu5"]
+[ext_resource type="Resource" uid="uid://xnieyxg5aavh" path="res://Items/Apple.tres" id="13_342u1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ra5lk"]
 radius = 5.0
@@ -55,6 +58,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ShadowSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.3017301, 0.18235265, 0.047154043, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_abenm"]
@@ -136,6 +151,18 @@ tracks/5/keys = {
 "clips": PackedStringArray("destroy"),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ShadowSprite2D:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(0.3017301, 0.18235265, 0.047154043, 1), Color(0.3019608, 0.18039216, 0.047058824, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_342u1"]
 resource_name = "destroy_side"
@@ -216,6 +243,18 @@ tracks/5/keys = {
 "clips": PackedStringArray("destroy"),
 "times": PackedFloat32Array(0)
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ShadowSprite2D:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(0.3017301, 0.18235265, 0.047154043, 1), Color(0.3019608, 0.18039216, 0.047058824, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_5kbkt"]
 resource_name = "destroy_up"
@@ -295,6 +334,18 @@ tracks/5/loop_wrap = true
 tracks/5/keys = {
 "clips": PackedStringArray("destroy"),
 "times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ShadowSprite2D:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(0.5, 0.5),
+"update": 0,
+"values": [Color(0.3017301, 0.18235265, 0.047154043, 1), Color(0.3019608, 0.18039216, 0.047058824, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_abogw"]
@@ -656,6 +707,19 @@ _data = {
 &"walk_up": SubResource("Animation_asksn")
 }
 
+[sub_resource type="Resource" id="Resource_it4bq"]
+script = ExtResource("11_uqwu5")
+item = ExtResource("12_abenm")
+max_amount = 3
+metadata/_custom_type_script = "uid://buh6505h8x1xc"
+
+[sub_resource type="Resource" id="Resource_evt0n"]
+script = ExtResource("11_uqwu5")
+item = ExtResource("13_342u1")
+probability = 50.0
+max_amount = 2
+metadata/_custom_type_script = "uid://buh6505h8x1xc"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ra5lk"]
 radius = 14.0
 
@@ -761,6 +825,7 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine" unique_id=1311000604]
 script = ExtResource("10_it4bq")
+drops = Array[ExtResource("11_uqwu5")]([SubResource("Resource_it4bq"), SubResource("Resource_evt0n")])
 
 [node name="HitBox" parent="." unique_id=1845444148 instance=ExtResource("10_17q00")]
 

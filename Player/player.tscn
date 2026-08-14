@@ -532,6 +532,8 @@ _data = {
 &"walk_up": SubResource("Animation_vtle1")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra5lk"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_yqryo"]
 
 [sub_resource type="Animation" id="Animation_o28un"]
@@ -673,6 +675,16 @@ max_polyphony = 4
 
 [node name="Interaction" type="Node2D" parent="." unique_id=1151507668]
 script = ExtResource("10_apopc")
+
+[node name="Area2D" type="Area2D" parent="Interaction" unique_id=1377950460]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction/Area2D" unique_id=1271532070]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_ra5lk")
+debug_color = Color(0, 0.64631253, 0.247361, 0.41960785)
 
 [node name="HitBox" parent="." unique_id=1845444148 instance=ExtResource("13_p5o4e")]
 collision_layer = 2

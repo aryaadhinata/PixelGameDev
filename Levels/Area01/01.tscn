@@ -5,9 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cc7mhm2576yda" path="res://Levels/PlayerSpawner.tscn" id="2_chooo"]
 [ext_resource type="PackedScene" uid="uid://cpxwqq5y70pfi" path="res://props/plant/plant.tscn" id="3_22ele"]
 [ext_resource type="PackedScene" uid="uid://by4415r3rcxi6" path="res://Levels/level_transition.tscn" id="5_pwydo"]
-[ext_resource type="PackedScene" uid="uid://bhfrh6a2c4nw8" path="res://Items/ItemPickUp/item_pick_up.tscn" id="6_8itkk"]
-[ext_resource type="Resource" uid="uid://bph1g0bws1xw6" path="res://Items/Gem.tres" id="7_b60gt"]
-[ext_resource type="Resource" uid="uid://bwa7fm2ipqnn1" path="res://Items/Potion.tres" id="8_f2d14"]
+[ext_resource type="PackedScene" uid="uid://cfdkrc3wo8ta8" path="res://Interactables/TreasureChest/treasure_chest.tscn" id="6_8itkk"]
 [ext_resource type="Resource" uid="uid://b6hqdererh6qp" path="res://Items/Stone.tres" id="9_an23e"]
 [ext_resource type="Resource" uid="uid://xnieyxg5aavh" path="res://Items/Apple.tres" id="10_f2d14"]
 
@@ -31,18 +29,12 @@ position = Vector2(512, 111)
 level = "uid://kqww5gq0q0ht"
 side = 1
 
-[node name="ItemPickUp" parent="." unique_id=1205634926 instance=ExtResource("6_8itkk")]
-position = Vector2(105, 82)
-item_data = ExtResource("7_b60gt")
-
-[node name="ItemPickUp2" parent="." unique_id=525704869 instance=ExtResource("6_8itkk")]
-position = Vector2(147, 99)
-item_data = ExtResource("8_f2d14")
-
-[node name="ItemPickUp3" parent="." unique_id=1236475733 instance=ExtResource("6_8itkk")]
-position = Vector2(101, 117)
-item_data = ExtResource("9_an23e")
-
-[node name="ItemPickUp4" parent="." unique_id=1895308356 instance=ExtResource("6_8itkk")]
-position = Vector2(153, 130)
+[node name="TreasureChest" parent="." unique_id=1659277351 instance=ExtResource("6_8itkk")]
+position = Vector2(156, 179)
 item_data = ExtResource("10_f2d14")
+quantity = 2
+
+[node name="TreasureChest2" parent="." unique_id=62120559 instance=ExtResource("6_8itkk")]
+position = Vector2(250, 111)
+item_data = ExtResource("9_an23e")
+quantity = 5

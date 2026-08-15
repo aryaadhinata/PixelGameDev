@@ -68,3 +68,12 @@ func update_sync_path() -> void :
 func update_item_data() -> void:
 	current_save.item = PlayerMeneger.INVENTORY_DATA.get_save_data()
 	pass
+
+func add_persistent_value(value : String) -> void :
+	if check_persistent_value(value) == false :
+		current_save.persistence.append(value)
+	pass
+
+func check_persistent_value(value : String) -> bool:
+	var p = current_save.persistence as Array
+	return p.has(value)

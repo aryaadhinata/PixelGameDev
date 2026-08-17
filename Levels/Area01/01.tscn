@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://by4415r3rcxi6" path="res://Levels/level_transition.tscn" id="5_pwydo"]
 [ext_resource type="PackedScene" uid="uid://cfdkrc3wo8ta8" path="res://Interactables/TreasureChest/treasure_chest.tscn" id="6_8itkk"]
 [ext_resource type="Resource" uid="uid://b6hqdererh6qp" path="res://Items/Stone.tres" id="9_an23e"]
+[ext_resource type="PackedScene" uid="uid://cpsyfigeicxyo" path="res://Enemies/Goblin/goblin.tscn" id="9_b60gt"]
 [ext_resource type="Resource" uid="uid://xnieyxg5aavh" path="res://Items/Apple.tres" id="10_f2d14"]
 
 [node name="01" type="Node2D" unique_id=1116274723]
@@ -38,3 +39,6 @@ quantity = 2
 position = Vector2(250, 111)
 item_data = ExtResource("9_an23e")
 quantity = 5
+
+[node name="Goblin" parent="." unique_id=1889120745 instance=ExtResource("9_b60gt")]
+position = Vector2(279, 174)

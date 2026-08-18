@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://t68whwr1d08c" path="res://Enemies/enemy_state_machine.gd" id="4_rpvui"]
 [ext_resource type="Script" uid="uid://crjl4usopi57x" path="res://Enemies/Script/state/enemy_state_idle.gd" id="5_16hq6"]
 [ext_resource type="AudioStream" uid="uid://cpf452hg5w5cx" path="res://Enemies/Slime/hit_00.wav" id="5_it4bq"]
-[ext_resource type="Script" uid="uid://okmuu874ss70" path="res://Enemies/Script/state/enemy_state_wonder.gd" id="6_bwui4"]
+[ext_resource type="Script" uid="uid://oxqlmnwr5j74" path="res://Enemies/Script/state/enemy_state_wonder.gd" id="8_7mghe"]
 [ext_resource type="Script" uid="uid://b21858glg3tku" path="res://Enemies/Script/state/enemy_state_stunt.gd" id="9_evt0n"]
 [ext_resource type="PackedScene" uid="uid://rft07yw37pom" path="res://GeneralNodes/HitBox/hit_box.tscn" id="10_17q00"]
 [ext_resource type="Script" uid="uid://db4w1e5ivaqw4" path="res://Enemies/Script/state/enemy_state_destroy.gd" id="10_it4bq"]
@@ -814,9 +814,8 @@ script = ExtResource("5_16hq6")
 after_idle_state = NodePath("../Wonder")
 
 [node name="Wonder" type="Node" parent="EnemyStateMachine" unique_id=1534947083 node_paths=PackedStringArray("next_state")]
-script = ExtResource("6_bwui4")
-wonder_speed = 34.0
-state_animation_duration = 0.7
+script = ExtResource("8_7mghe")
+anim_name = "chase"
 next_state = NodePath("../Idle")
 
 [node name="Stunt" type="Node" parent="EnemyStateMachine" unique_id=856064815 node_paths=PackedStringArray("next_state")]

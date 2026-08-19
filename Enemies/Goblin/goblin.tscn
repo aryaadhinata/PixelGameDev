@@ -13,9 +13,10 @@
 [ext_resource type="Script" uid="uid://b21858glg3tku" path="res://Enemies/Script/state/enemy_state_stunt.gd" id="11_12gec"]
 [ext_resource type="Script" uid="uid://db4w1e5ivaqw4" path="res://Enemies/Script/state/enemy_state_destroy.gd" id="12_70q8a"]
 [ext_resource type="Script" uid="uid://buh6505h8x1xc" path="res://Enemies/Script/drop_data.gd" id="13_1n8tx"]
-[ext_resource type="Resource" uid="uid://bph1g0bws1xw6" path="res://Items/Gem.tres" id="14_3lq4b"]
-[ext_resource type="Resource" uid="uid://xnieyxg5aavh" path="res://Items/Apple.tres" id="15_foxsm"]
+[ext_resource type="Script" uid="uid://c6mj41mbonjma" path="res://Items/ItemsEffects/item_effects.gd" id="14_l2k1h"]
+[ext_resource type="Script" uid="uid://c3a3oynvctoij" path="res://Items/Scripts/item_data.gd" id="15_4i25o"]
 [ext_resource type="Texture2D" uid="uid://bvy5rrftb0nuo" path="res://Enemies/Slime/DestroySmoke.png" id="16_obyvq"]
+[ext_resource type="Texture2D" uid="uid://ch55gju8m18qr" path="res://Items/Sprites/items.png" id="16_p7r07"]
 [ext_resource type="Script" uid="uid://okmuu874ss70" path="res://Enemies/Script/state/enemy_state_chase.gd" id="16_p257j"]
 [ext_resource type="PackedScene" uid="uid://c71lkt1gygw8q" path="res://Enemies/vision_area.tscn" id="17_r3i0u"]
 
@@ -658,17 +659,20 @@ _data = {
 &"walk_up": SubResource("Animation_asksn")
 }
 
-[sub_resource type="Resource" id="Resource_it4bq"]
-script = ExtResource("13_1n8tx")
-item = ExtResource("14_3lq4b")
-max_amount = 3
-metadata/_custom_type_script = "uid://buh6505h8x1xc"
+[sub_resource type="AtlasTexture" id="AtlasTexture_7n63w"]
+atlas = ExtResource("16_p7r07")
+region = Rect2(160, 0, 32, 0)
 
-[sub_resource type="Resource" id="Resource_evt0n"]
+[sub_resource type="Resource" id="Resource_08v70"]
+script = ExtResource("15_4i25o")
+texture = SubResource("AtlasTexture_7n63w")
+metadata/_custom_type_script = "uid://c3a3oynvctoij"
+
+[sub_resource type="Resource" id="Resource_qq1px"]
 script = ExtResource("13_1n8tx")
-item = ExtResource("15_foxsm")
-probability = 50.0
-max_amount = 2
+item = SubResource("Resource_08v70")
+probability = 75.0
+max_amount = 3
 metadata/_custom_type_script = "uid://buh6505h8x1xc"
 
 [sub_resource type="Animation" id="Animation_touw5"]
@@ -797,11 +801,11 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine" unique_id=1311000604]
 script = ExtResource("12_70q8a")
-drops = Array[ExtResource("13_1n8tx")]([SubResource("Resource_it4bq"), SubResource("Resource_evt0n")])
+drops = Array[ExtResource("13_1n8tx")]([SubResource("Resource_qq1px")])
 
 [node name="Chase" type="Node" parent="EnemyStateMachine" unique_id=958141763 node_paths=PackedStringArray("vision_area", "attack_area", "next_state")]
 script = ExtResource("16_p257j")
-chase_speed = 60.0
+chase_speed = 32.0
 vision_area = NodePath("../../VisionArea")
 attack_area = NodePath("../../Sprite2D/AttackHurtBox")
 next_state = NodePath("../Idle")

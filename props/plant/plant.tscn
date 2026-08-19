@@ -3,6 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://b7nqkwca02di0" path="res://props/sprite/Props.png" id="1_0sxhh"]
 [ext_resource type="Script" uid="uid://cioubia8ynpui" path="res://props/plant/plant.gd" id="1_hd0yf"]
 [ext_resource type="PackedScene" uid="uid://rft07yw37pom" path="res://GeneralNodes/HitBox/hit_box.tscn" id="2_4ohwc"]
+[ext_resource type="Script" uid="uid://buh6505h8x1xc" path="res://Enemies/Script/drop_data.gd" id="2_7e1b5"]
+[ext_resource type="Resource" uid="uid://cievqilbi0i8a" path="res://Items/Branch.tres" id="3_wbrtn"]
+
+[sub_resource type="Resource" id="Resource_l2k1h"]
+script = ExtResource("2_7e1b5")
+item = ExtResource("3_wbrtn")
+max_amount = 3
+metadata/_custom_type_script = "uid://buh6505h8x1xc"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hd0yf"]
 size = Vector2(32, 26)
@@ -12,6 +20,7 @@ size = Vector2(24, 16)
 
 [node name="Plant" type="Node2D" unique_id=1667203542]
 script = ExtResource("1_hd0yf")
+drops = Array[ExtResource("2_7e1b5")]([SubResource("Resource_l2k1h")])
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=538505698]
 texture = ExtResource("1_0sxhh")

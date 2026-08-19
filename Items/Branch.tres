@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://cievqilbi0i8a"]
+
+[ext_resource type="Script" uid="uid://c6mj41mbonjma" path="res://Items/ItemsEffects/item_effects.gd" id="1_lxh2x"]
+[ext_resource type="AudioStream" uid="uid://c2y6aum0hory7" path="res://Items/ItemsEffects/hp-up.wav" id="2_u5rqv"]
+[ext_resource type="Script" uid="uid://bybcftseorumj" path="res://Items/ItemsEffects/item_effects_heal.gd" id="3_heaqd"]
+[ext_resource type="Script" uid="uid://c3a3oynvctoij" path="res://Items/Scripts/item_data.gd" id="4_c8a2a"]
+[ext_resource type="Texture2D" uid="uid://ch55gju8m18qr" path="res://Items/Sprites/items.png" id="5_11cgp"]
+
+[sub_resource type="Resource" id="Resource_yqryo"]
+script = ExtResource("3_heaqd")
+audio = ExtResource("2_u5rqv")
+metadata/_custom_type_script = "uid://bybcftseorumj"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra5lk"]
+atlas = ExtResource("5_11cgp")
+region = Rect2(128, 0, 32, 0)
+
+[resource]
+script = ExtResource("4_c8a2a")
+name = "Branch"
+description = "Wood stick"
+texture = SubResource("AtlasTexture_ra5lk")
+effect = Array[ExtResource("1_lxh2x")]([SubResource("Resource_yqryo")])
+metadata/_custom_type_script = "uid://c3a3oynvctoij"

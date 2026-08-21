@@ -3,6 +3,8 @@ class_name VisionArea extends Area2D
 signal player_entered
 signal player_exited
 
+@onready var vision_shape : CollisionPolygon2D = get_node_or_null("CollisionPolygon2D")
+
 func _ready() -> void:
 	body_entered.connect(_on_body_enter)
 	body_exited.connect(_on_body_exit)
@@ -23,4 +25,7 @@ func _on_body_exit(_b : Node2D) -> void :
 	pass
 
 func _on_direction_change(new_direction : Vector2) -> void :
+	if vision_shape == null:
+		return
+	vision_shape.rotation = new_direction.angle() - PI / 2
 	pass

@@ -26,7 +26,7 @@ func _ready() -> void:
 	pass
 
 func set_chest_state() -> void :
-	var is_open = is_open_data.value
+	is_open = is_open_data.value
 	if is_open:
 		animation_player.play("open")
 	else:

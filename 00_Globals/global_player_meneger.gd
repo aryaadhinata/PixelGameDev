@@ -35,3 +35,7 @@ func set_as_parent(_p : Node2D) -> void :
 
 func unparent_player(_p : Node2D) -> void :
 	_p.remove_child(player)
+
+func trigger_interact() -> void:
+	interact_press.emit()
+	pass

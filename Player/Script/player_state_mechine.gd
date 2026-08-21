@@ -20,6 +20,9 @@ func _physics_process(delta: float):
 	pass
 
 func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("interact"):
+		PlayerMeneger.trigger_interact()
+	
 	ChangeState(current_state.HandleInput(event))
 	pass
 

@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://by4415r3rcxi6" path="res://Levels/level_transition.tscn" id="5_pwydo"]
 [ext_resource type="PackedScene" uid="uid://cfdkrc3wo8ta8" path="res://Interactables/TreasureChest/treasure_chest.tscn" id="6_8itkk"]
 [ext_resource type="Resource" uid="uid://b6hqdererh6qp" path="res://Items/Stone.tres" id="9_an23e"]
-[ext_resource type="PackedScene" uid="uid://cpsyfigeicxyo" path="res://Enemies/Goblin/goblin.tscn" id="9_b60gt"]
 [ext_resource type="Resource" uid="uid://xnieyxg5aavh" path="res://Items/Apple.tres" id="10_f2d14"]
 
 [node name="01" type="Node2D" unique_id=1116274723]
@@ -22,6 +21,9 @@ position = Vector2(160, 46)
 [node name="Plant2" parent="." unique_id=743024612 instance=ExtResource("3_22ele")]
 position = Vector2(368, 124)
 
+[node name="Plant3" parent="." unique_id=793846049 instance=ExtResource("3_22ele")]
+position = Vector2(276, 205)
+
 [node name="player_spawn" parent="." unique_id=1440109363 instance=ExtResource("2_chooo")]
 position = Vector2(41, 223)
 
@@ -29,6 +31,11 @@ position = Vector2(41, 223)
 position = Vector2(512, 111)
 level = "uid://kqww5gq0q0ht"
 side = 1
+
+[node name="LevelTransition3" parent="." unique_id=2092734168 instance=ExtResource("5_pwydo")]
+position = Vector2(-33, 228)
+level = "uid://b2p1ok6vqn73r"
+snap_to_grid = true
 
 [node name="TreasureChest" parent="." unique_id=1659277351 instance=ExtResource("6_8itkk")]
 position = Vector2(156, 179)
@@ -39,6 +46,3 @@ quantity = 2
 position = Vector2(250, 111)
 item_data = ExtResource("9_an23e")
 quantity = 5
-
-[node name="Goblin" parent="." unique_id=1889120745 instance=ExtResource("9_b60gt")]
-position = Vector2(279, 174)

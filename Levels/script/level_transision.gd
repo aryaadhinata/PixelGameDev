@@ -47,7 +47,15 @@ func _place_player() -> void :
 	if name != LevelMeneger.target_transition:
 		return
 	
-	PlayerMeneger.set_player_position(global_position + LevelMeneger.position_offset)
+	var offset : Vector2 = LevelMeneger.position_offset
+	var half_extent : float = 16.0 * size   # matches the scaling used in _update_area()
+	
+	if side == SIDE.LEFT or side == SIDE.RIGHT:
+		offset.y = clamp(offset.y, -half_extent, half_extent)
+	else:
+		offset.x = clamp(offset.x, -half_extent, half_extent)
+	
+	PlayerMeneger.set_player_position(global_position + offset)
 	pass
 
 func get_offset() -> Vector2:

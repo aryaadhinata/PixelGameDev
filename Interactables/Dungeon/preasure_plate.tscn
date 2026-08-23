@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bsa520yt7cqxh"]
+
+[ext_resource type="Script" uid="uid://deyu8il3yrd5d" path="res://Interactables/Dungeon/Script/preasure_plate.gd" id="1_6efh3"]
+[ext_resource type="Texture2D" uid="uid://baacwckjmk25p" path="res://Interactables/Dungeon/dungeon_props.png" id="2_6b7xn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra5lk"]
+size = Vector2(8, 9)
+
+[node name="PreasurePlate" type="Node2D" unique_id=1373103354]
+script = ExtResource("1_6efh3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1326668204]
+texture = ExtResource("2_6b7xn")
+region_enabled = true
+region_rect = Rect2(415, 64, 33, 32)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1029306948]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1080449772]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ra5lk")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=259840045]

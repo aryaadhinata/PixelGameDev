@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cbbyutjo557l1" path="res://Tile Maps/Sprites/Grass-01.png" id="1_u5s8h"]
 [ext_resource type="Script" uid="uid://ot4srhee6i46" path="res://Tile Maps/LevelTileMap.gd" id="2_kpenc"]
+[ext_resource type="Texture2D" uid="uid://np2ubikmbgch" path="res://Tile Maps/Sprites/dungeon_entrance.png" id="2_vy4p5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5s8h"]
 texture = ExtResource("1_u5s8h")
@@ -181,11 +182,33 @@ texture_region_size = Vector2i(32, 32)
 14:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 16, -16, -16, 16, -16, 13, -9, 12, 5, 6, 10)
 15:7/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17imq"]
+texture = ExtResource("2_vy4p5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 6, -1, 5, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -12, 8, -8, 3, -4, 0, -6, -3, -4, -9, -11, -16, -12)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -16, -16, -6, -1, -5, 16, 16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 6, -16, 6, -6, 8, 1, 5, 16, -16, 16)
+1:2/0 = 0
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -16, -6, -16, -4, -7, -7, 3, -5, 16, 16, 16)
+
 [sub_resource type="TileSet" id="TileSet_ra5lk"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 16
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_u5s8h")
+sources/1 = SubResource("TileSetAtlasSource_17imq")
 
 [node name="TileMapLayer" type="TileMapLayer" unique_id=58187506]
 z_index = -1

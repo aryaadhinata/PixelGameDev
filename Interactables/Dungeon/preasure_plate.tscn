@@ -4,20 +4,24 @@
 [ext_resource type="Texture2D" uid="uid://baacwckjmk25p" path="res://Interactables/Dungeon/dungeon_props.png" id="2_6b7xn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ra5lk"]
-size = Vector2(8, 9)
+size = Vector2(11, 14)
 
 [node name="PreasurePlate" type="Node2D" unique_id=1373103354]
 script = ExtResource("1_6efh3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1326668204]
+z_index = -1
 texture = ExtResource("2_6b7xn")
 region_enabled = true
 region_rect = Rect2(415, 64, 33, 32)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1029306948]
+collision_layer = 0
+collision_mask = 49
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1080449772]
-position = Vector2(0, -0.5)
+position = Vector2(1, -2)
 shape = SubResource("RectangleShape2D_ra5lk")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=259840045]

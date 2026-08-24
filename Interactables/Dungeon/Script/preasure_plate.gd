@@ -18,23 +18,32 @@ func _ready() -> void:
 	area_2d.body_exited.connect(_on_body_exited)
 	off_rect = sprite.region_rect
 
-func _on_body_entered(b : Node2D) -> void :
+func _on_body_entered(_b : Node2D) -> void :
 	bodies += 1
+	check_is_activated()
 	
 	pass
 
-func _on_body_exited(b : Node2D) -> void :
+func _on_body_exited(_b : Node2D) -> void :
 	bodies -= 1
+	check_is_activated()
 	
 	pass
 
 func check_is_activated() -> void : 
 	if bodies >= 0 and is_active == false:
 		is_active = true
+		sprite.region_rect.position.x = off_rect.position.x - 32
+		play_audio(audio_active)
 		activated.emit()
 	elif bodies <= 0 and is_active == true:
 		is_active = false
-		activated.emit()
-	
+		sprite.region_rect.position.x = off_rect.position.x
+		play_audio(audio_deactive)
+		deactivated.emit()
 	
 	pass
+
+func play_audio(_stream : AudioStream) -> void :
+	audio.stream =  _stream
+	audio.play()

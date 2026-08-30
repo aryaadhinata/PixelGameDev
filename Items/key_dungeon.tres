@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dlmgqdqqsvqqi"]
+
+[ext_resource type="Script" uid="uid://c6mj41mbonjma" path="res://Items/ItemsEffects/item_effects.gd" id="1_u6d1n"]
+[ext_resource type="Script" uid="uid://c3a3oynvctoij" path="res://Items/Scripts/item_data.gd" id="2_y1yal"]
+[ext_resource type="Texture2D" uid="uid://ch55gju8m18qr" path="res://Items/Sprites/items.png" id="3_pf2ne"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qwxb"]
+atlas = ExtResource("3_pf2ne")
+region = Rect2(224, 0, 32, 0)
+
+[resource]
+script = ExtResource("2_y1yal")
+name = "key_dungeon"
+description = "A key? Open some doors maybe?"
+texture = SubResource("AtlasTexture_7qwxb")
+metadata/_custom_type_script = "uid://c3a3oynvctoij"

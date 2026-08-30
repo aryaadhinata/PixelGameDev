@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d2ovy4g3jn2ou"]
+
+[ext_resource type="Texture2D" uid="uid://baacwckjmk25p" path="res://Interactables/Dungeon/dungeon_props.png" id="1_8l5hy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ra5lk"]
+size = Vector2(64, 64)
+
+[node name="LockDoor" type="Node2D" unique_id=1890509294]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=478287971]
+position = Vector2(32, -38)
+texture = ExtResource("1_8l5hy")
+hframes = 7
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2098851634]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=160287869]
+position = Vector2(32, -32)
+shape = SubResource("RectangleShape2D_ra5lk")

@@ -815,7 +815,6 @@ after_idle_state = NodePath("../Wonder")
 
 [node name="Wonder" type="Node" parent="EnemyStateMachine" unique_id=1534947083 node_paths=PackedStringArray("next_state")]
 script = ExtResource("8_7mghe")
-anim_name = "chase"
 next_state = NodePath("../Idle")
 
 [node name="Stunt" type="Node" parent="EnemyStateMachine" unique_id=856064815 node_paths=PackedStringArray("next_state")]

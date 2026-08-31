@@ -22,5 +22,19 @@ level = "uid://i2g71l7t7sot"
 target_transition_area = "LevelTransition2"
 side = 3
 
+[node name="LevelTransition2" parent="." unique_id=2003297961 instance=ExtResource("4_qfvdh")]
+position = Vector2(479, 142)
+level = "uid://d0g8ewbp8nmb6"
+size = 3
+side = 1
+snap_to_grid = true
+
+[node name="LevelTransition3" parent="." unique_id=1602987959 instance=ExtResource("4_qfvdh")]
+position = Vector2(224, -17)
+level = "uid://kqww5gq0q0ht"
+target_transition_area = "LevelTransition4"
+side = 2
+snap_to_grid = true
+
 [node name="LockDoor" parent="." unique_id=1890509294 instance=ExtResource("5_f00rj")]
 position = Vector2(192, -10)

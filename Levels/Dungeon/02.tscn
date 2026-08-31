@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dbcsld6d56mpl" path="res://Tile Maps/dungeon-01.tscn" id="2_f00rj"]
 [ext_resource type="PackedScene" uid="uid://cc7mhm2576yda" path="res://Levels/PlayerSpawner.tscn" id="3_qfg85"]
 [ext_resource type="PackedScene" uid="uid://by4415r3rcxi6" path="res://Levels/level_transition.tscn" id="4_qfvdh"]
-[ext_resource type="PackedScene" uid="uid://d2ovy4g3jn2ou" path="res://Interactables/Dungeon/lock_doors.tscn" id="5_f00rj"]
+[ext_resource type="PackedScene" uid="uid://d2ovy4g3jn2ou" path="res://Interactables/Dungeon/locked_doors.tscn" id="5_f00rj"]
 
 [node name="02" type="Node2D" unique_id=1658027746]
 script = ExtResource("1_t7r2p")
@@ -31,8 +31,7 @@ snap_to_grid = true
 
 [node name="LevelTransition3" parent="." unique_id=1602987959 instance=ExtResource("4_qfvdh")]
 position = Vector2(224, -17)
-level = "uid://kqww5gq0q0ht"
-target_transition_area = "LevelTransition4"
+level = "uid://xhppxqsv2tky"
 side = 2
 snap_to_grid = true
 
